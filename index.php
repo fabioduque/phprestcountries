@@ -2,7 +2,6 @@
 require 'vendor/autoload.php';
 require 'src/controllers/Countries.php';
 
-
 function send_json($content)
 {
     header("Access-Control-Allow-Origin: *");
@@ -13,7 +12,7 @@ function send_json($content)
 
 $app = new \Slim\Slim();
 
-$app->get('/countries/all/(:count(/:page))', function ($count=0, $page=1) {
+$app->get('/countries/all(/:count(/:page))', function ($count=0, $page=1) {
     
     // Fetch all countries
     $Countries = new Countries();

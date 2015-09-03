@@ -41,11 +41,8 @@ class Countries
 
                 // echo "<hr>offset = ".$offset." length = ".$length;
 
-        $allCountries = array_slice($allCountries, $offset, $length);
+        return array_slice($allCountries, $offset, $length);
 
-        header("Content-Type: application/json");
-        echo json_encode($allCountries);
-        exit;
     }
 
     function getCountryByAlpha($alpha)
@@ -56,10 +53,7 @@ class Countries
 
     function getCountryByName($name)
     {
-        $country = $this->CountriesSvc->getCountryByName($name);
-        header("Content-Type: application/json");
-        echo json_encode($country);
-        exit;
+        return $this->CountriesSvc->getCountryByName($name);
     }
 
 
