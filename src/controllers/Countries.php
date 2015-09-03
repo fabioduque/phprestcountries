@@ -48,6 +48,23 @@ class Countries
         exit;
     }
 
+    function getCountryByAlpha($alpha)
+    {
+        $country = $this->CountriesSvc->getCountryByAlpha($alpha);
+        header("Content-Type: application/json");
+        echo json_encode($country);
+        exit;
+    }
+
+    function getCountryByName($name)
+    {
+        $country = $this->CountriesSvc->getCountryByName($name);
+        header("Content-Type: application/json");
+        echo json_encode($country);
+        exit;
+    }
+
+
     
 }
 

@@ -8,8 +8,8 @@ class CountriesSvc
     private $APILoader = null;
 
     // Define endpoints
-    private $countries_all = "https://restcountries.eu/rest/v1/all";
-    private $country_alpha = "https://restcountries.eu/rest/v1/all";
+    private $countries_all = "https://restcountries.eu/rest/v1/all/";
+    private $country_alpha = "https://restcountries.eu/rest/v1/alpha/";
     private $country_name = "https://restcountries.eu/rest/v1/name/";
 
     // Constructor
@@ -21,7 +21,7 @@ class CountriesSvc
     // Actions
     function getAllCountries()
     {        
-        
+
         return json_decode($this->APILoader->CallAPI("GET", $this->countries_all), true);
     }
 
