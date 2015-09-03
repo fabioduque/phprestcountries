@@ -50,10 +50,8 @@ class Countries
 
     function getCountryByAlpha($alpha)
     {
-        $country = $this->CountriesSvc->getCountryByAlpha($alpha);
-        header("Content-Type: application/json");
-        echo json_encode($country);
-        exit;
+        return $this->CountriesSvc->getCountryByAlpha($alpha);
+        
     }
 
     function getCountryByName($name)
